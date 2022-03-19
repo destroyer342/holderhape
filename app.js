@@ -54,11 +54,7 @@ const showData = () => {
 }
 client.on("messageCreate", (message) => {
 if (message.author.bot == false){
-    const message2 = message.content
-    const lowerMessage = message2.toLowerCase()
-        if(lowerMessage==='!showdata'){
-        message.channel.send({ embeds: showData()});
-    }
+ 
   
     // const embed = new discord.MessageEmbed()
     // .setColor("RANDOM")
