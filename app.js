@@ -28,30 +28,7 @@ const getStats = async () => {
     }
 }
 
-const showData = () => {
-    const embed = new discord.MessageEmbed().setTitle(' Hape Prime Data 📊');
-   // const embed = new MessageEmbed()
-    
-    
-    embed.setColor('#ff0000');
-    embed.setImage('https://lh3.googleusercontent.com/DpDD3ZCphqFBmqKGVgoNdCucMFKJid-p1Kl6jDjMkeDzDdfc7RGC761CahDXloVpqW2I_DA6m0xP54co6odWBYWo1T7H-BZx1MmfdA=w600');
-
-    embed.addFields({ name: 'Floor Price', value: `${hapedata.stats.floor_price} Ξ` },
-                    { name: 'Total Supply', value: `${hapedata.stats.total_supply}` },
-                    { name: '# of Owners', value: `${hapedata.stats.num_owners}` },
-                    { name: '24 Hours Volume', value: `${hapedata.stats.one_day_volume} Ξ` },
-                    { name: '24 Hours Sales', value: `${hapedata.stats.one_day_sales}` },
-                    { name: '7 Days Volume', value: `${hapedata.stats.seven_day_volume} Ξ` },
-                    { name: '7 Days Sales', value: `${hapedata.stats.seven_day_sales}` },
-                    { name: '30 Days Volume', value: `${hapedata.stats.thirty_day_volume} Ξ` },
-                    { name: '30 Days Sales', value: `${hapedata.stats.thirty_day_sales}` },
-                    { name: 'Total Volume', value: `${hapedata.stats.total_volume} Ξ` },
-                    { name: 'Total Sales', value: `${hapedata.stats.total_sales}` },
-                    { name: 'Market Cap', value: `${hapedata.stats.market_cap}` }
-);
-    return [embed];
-
-}
+setInterval(getStats, 10 * 2000);
 client.on("messageCreate", (message) => {
 if (message.author.bot == false){
  
